@@ -1,0 +1,17 @@
+{
+  /** "presets"
+   * a set of plugins to support different language features. 
+   * Each preset corresponds to a particular ECMAScript version
+   */
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+
+  /** "plugins" apply specific plugins to transform code 
+   */
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
+
+}
