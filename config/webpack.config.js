@@ -9,7 +9,7 @@ module.exports = {
 
   /** "entry" the entry point
    */
-  entry: "../src/index.js",
+  entry: "./src/index.jsx",
 
   output: {
     /** "path" the folder path of the output file
@@ -31,7 +31,7 @@ module.exports = {
      * listed first in the array and skip the rest.
      */
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
   },
 
 
@@ -42,18 +42,24 @@ module.exports = {
      * or handle modules during the budling process
      */
     rules: [
-      {
+     {
       /** "test" transform code when a file resolves to '.js or .jsx'
        */
-       test: /\.(js|jsx)$/,
+      test: /\.(js|jsx)$/,
 
       /** "exclude" exclude node_module folder from being searched
        */
-       exclude: /node.modules/,
+      exclude: /node.modules/,
+
       /** "use" use the babel-loader to transform it before you
        */
-       use: 'babel-loader',     
+      use: {
+        loader: 'babel-loader',    
+        options: { 
+          presets: ['@babel/env', '@babel/preset-react'] 
+        },
       }
+      } 
     ]
   },
 
@@ -63,7 +69,6 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "../public"),
     },
-
     /** "port" port of dev server
      */
     port: 9000,
@@ -76,5 +81,6 @@ module.exports = {
     /** "open" open the browser when the server is successfully started
      */
     open: true,
-  }
+
+  },
 };
