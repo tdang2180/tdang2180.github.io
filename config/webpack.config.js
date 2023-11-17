@@ -14,7 +14,7 @@ module.exports = {
   output: {
     /** "path" the folder path of the output file
      */
-    path: path.resolve(__dirname, "../public"),
+    path: path.resolve(__dirname, "../doc"),
 
     /** "filename" the name of the output file
      */
@@ -67,7 +67,7 @@ module.exports = {
    */
   devServer: {
     static: {
-      directory: path.join(__dirname, "../public"),
+      directory: path.join(__dirname, "../doc"),
     },
     /** "port" port of dev server
      */
