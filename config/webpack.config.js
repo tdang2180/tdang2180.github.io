@@ -1,4 +1,5 @@
 const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   /** "mode"
@@ -34,7 +35,6 @@ module.exports = {
     extensions: [".tsx", ".ts", ".jsx", ".js"],
   },
 
-
   /** "module" determine how the different types of modules will be treated
    */
   module: {
@@ -63,6 +63,14 @@ module.exports = {
     ]
   },
 
+  /** "plugins" HtmlWebpackPlugin simplifies creation of HTML files to serve webpack bundles
+   */
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./docs/index.html"
+    })
+  ],
+
   /** "devServer" create a dev server using webpack-dev-server
    */
   devServer: {
@@ -81,6 +89,5 @@ module.exports = {
     /** "open" open the browser when the server is successfully started
      */
     open: true,
-
   },
 };
