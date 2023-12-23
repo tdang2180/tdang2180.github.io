@@ -42,24 +42,36 @@ module.exports = {
      * or handle modules during the budling process
      */
     rules: [
-     {
-      /** "test" transform code when a file resolves to '.js or .jsx'
-       */
-      test: /\.(js|jsx)$/,
+      {
+        /** "test" transform code when a file resolves to '.js or .jsx'
+         */
+        test: /\.(js|jsx)$/,
 
-      /** "exclude" exclude node_module folder from being searched
-       */
-      exclude: /node.modules/,
+        /** "exclude" exclude node_module folder from being searched
+         */
+        exclude: /node.modules/,
 
-      /** "use" use the babel-loader to transform it before you
-       */
-      use: {
-        loader: 'babel-loader',    
-        options: { 
-          presets: ['@babel/env', '@babel/preset-react'] 
-        },
+        /** "use" use the babel-loader to transform it before you
+         */
+        use: {
+          loader: 'babel-loader',    
+          options: { 
+            presets: ['@babel/env', '@babel/preset-react'] 
+          },
+        }
+      },
+      
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '../src/media/[name].[ext]',
+            outputPath: 'media'
+          }
+        } 
       }
-      } 
     ]
   },
 
