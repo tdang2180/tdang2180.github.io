@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   const handleProjects = () => {
-    window.scrollTo({ top: 230, behavior: "smooth" });
+    window.scrollTo({ top: 320, behavior: "smooth" });
   };
 
   const handleAwards = () => {
