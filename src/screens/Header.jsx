@@ -21,12 +21,8 @@ export default function Header() {
     window.scrollTo({ top: 320, behavior: "smooth" });
   };
 
-  const handleAwards = () => {
-    window.scrollTo({ top: 1500, behavior: "smooth" });
-  };
-
   const handleContact = () => {
-    window.scrollTo({ top: 2000, behavior: "smooth" });
+    window.scrollTo({ top: 3000, behavior: "smooth" });
   };
 
   return (
@@ -41,9 +37,6 @@ export default function Header() {
           </Typography>
           <Typography variant="h5" sx={styles.text} onClick={handleProjects}>
             Projects
-          </Typography>
-          <Typography variant="h5" sx={styles.text} onClick={handleAwards}>
-            Awards
           </Typography>
           <Typography variant="h5" sx={styles.text} onClick={handleContact}>
             Contact

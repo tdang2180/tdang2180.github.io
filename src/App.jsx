@@ -12,6 +12,8 @@ export default function App () {
     <Header/>
     <Stack bgcolor="#121212" spacing={7}>
       <About/>
+      <Project/>
+      <Contact/>
     </Stack>
     </>
   )
